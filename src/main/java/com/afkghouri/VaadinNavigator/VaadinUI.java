@@ -14,6 +14,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
 
 @SpringUI
+@PushStateNavigation
 public class VaadinUI extends UI{
 
 	@Override
@@ -21,8 +22,7 @@ public class VaadinUI extends UI{
     	System.out.println("init");
        
     	Label title = new Label("Menu");
-        title.addStyleName(ValoTheme.MENU_TITLE);
-
+        title.addStyleName(ValoTheme.MENU_TITLE); 
         Button view1 = new Button("Products", e -> getNavigator().navigateTo("view1")); 
         view1.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
         Button view2 = new Button("Categories", e -> getNavigator().navigateTo("view2"));
@@ -43,6 +43,7 @@ public class VaadinUI extends UI{
         navigator.addView("", DefaultView.class);
         navigator.addView("view1", View1.class);
         navigator.addView("view2", View2.class);
+        
        
     }
 
