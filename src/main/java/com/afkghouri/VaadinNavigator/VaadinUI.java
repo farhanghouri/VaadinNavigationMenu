@@ -23,8 +23,7 @@ public class VaadinUI extends UI{
     	Label title = new Label("Menu");
         title.addStyleName(ValoTheme.MENU_TITLE);
 
-        Button view1 = new Button("Products", e -> getNavigator().navigateTo("view1"));
-        
+        Button view1 = new Button("Products", e -> getNavigator().navigateTo("view1")); 
         view1.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
         Button view2 = new Button("Categories", e -> getNavigator().navigateTo("view2"));
         view2.addStyleNames(ValoTheme.BUTTON_LINK, ValoTheme.MENU_ITEM);
@@ -38,7 +37,9 @@ public class VaadinUI extends UI{
         mainLayout.setSizeFull();
         setContent(mainLayout);   
 
+     // Create a navigator to control the views
         Navigator navigator = new Navigator(this, viewContainer);
+     // Create and register the views
         navigator.addView("", DefaultView.class);
         navigator.addView("view1", View1.class);
         navigator.addView("view2", View2.class);
